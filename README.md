@@ -12,7 +12,7 @@ Presentation/Gallery/Kontakt/Jobs/Admin pages
 - Jobs (may be not needed for the first version)
 - Admin contains administration tools to manage the carousel and gallery photos and sections. Must be password secured.
 
-First version expected deployment date: 01/12/202
+First version expected deployment date: 01/12/2020
 
 
 # Project Structure
