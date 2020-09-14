@@ -1,0 +1,381 @@
+content{
+
+}
+
+/*
+mat-toolbar {
+    position: fixed;
+    top: 0;
+    z-index: 999; 
+    background: transparent;
+}*/
+
+.gmap{
+  height:50vh !important
+}
+agm-map { 
+  height: 100%; /* height is required */ 
+ }
+
+footer{
+  height:15vh;
+  padding:2vh;
+  text-align:center
+}
+
+
+
+
+
+.desc-title{
+  margin:auto !important;
+  /*color:rgb(61, 187, 209);*/
+  color:grey;
+  border-bottom:2px solid rgb(61, 187, 209);
+  width:40%
+}
+
+
+.toolbar-icon{
+    color:white;
+
+}
+
+.toolbar-link{
+    color:white;
+
+}
+
+
+/*DESKTOP*/
+
+.flex-container { /*for column layout*/
+  display: flex;
+}
+
+.flex-container > div {
+  /*background-color: #f1f1f1;*/
+  margin: 1vh auto 0 auto;
+  width: 30%;
+  height:90%;
+  text-align: center
+}
+
+.section-1{
+   
+    background:url("../../../assets/placeholder2.jpg") no-repeat 0 0;
+    height:50vh;
+    background-size: cover;
+       
+}
+
+.frame1{
+  width:100%;height:50vh;opacity: 0.5;z-index:10;position: absolute;
+}
+.frame2{
+  width:100%;height:50vh;z-index:10;position: absolute;
+}
+
+.section-2{
+    background-color: white;
+    width:100%;
+    height:auto;
+    color:#676767
+
+}
+
+.section-2 div{
+  text-align: center;
+  height: auto
+}
+
+.section-3{
+    background-color: #f1f1f1;
+    width:100%;
+    height:auto;
+
+}
+.section-3 > div{
+  text-align: center
+}
+
+.section-3 > .team{
+
+  width: 30%;
+  text-align: center
+}
+.section-3 > .carousel-demo{
+  width: 60%;
+  height: 50vh; /*height of the carousel! */
+  text-align: center
+}
+
+.section-4{
+  background-color: white;
+  width:100%;
+  height:auto;
+
+}
+
+.section-4 > div{
+  text-align: center;
+  height:auto;
+}
+
+
+/*TABLETS*/
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+
+  
+  .section-1{
+    background:url("../../../assets/placeholder2-tablet.jpg") no-repeat 0 0;
+    width:100%;
+    height:50vh;
+    background-size: cover;
+}
+
+
+  .flex-container{
+    display:none
+  }
+
+  .section-2{
+    background-color: white;
+    width:100%;
+    height:auto;
+
+    display:flex
+  }
+
+  .section-2 > div {
+    
+    margin: 1vh;
+    width: 30%;
+    padding:2vw;
+    height:auto;
+    text-align: center
+  }
+
+  .section-2 .flex-container { /*for column layout*/
+    display: flex;
+   
+  }
+
+  .section-3{
+    background-color: #f1f1f1 !important;
+    width:100%;
+    height: 60vh;
+
+    display: flex;
+    flex-direction: column !important;
+
+  }
+  
+  .section-3 > div {
+    margin: 0;
+    width: 0;
+    padding:0;
+    height:0;
+    text-align: none
+    
+  }
+  .section-3 > .team{
+   /* height:40% ;*/
+   height:auto;
+    width: 100%;
+    text-align: center
+  }
+  .team > div{
+    display: inline-block;
+    width:65%
+  }
+  .team > .desc-title{
+    width:20%
+  }
+  .section-3 > .carousel-demo{
+    width: 100%;
+    height:60%;
+    text-align: center
+  }
+
+  .section-4{
+    background-color: white;
+    width:100%;
+    height:auto;
+
+    display: flex;
+
+  }
+
+  .section-4 > div {
+    
+    margin: 1vh;
+    width: 50%;
+    padding:2vw;
+    height:auto;
+    text-align: center
+  }
+
+  
+      .gmap{
+        padding:0px !important;
+      }
+
+      footer{
+        height:10vh;
+      }
+
+ 
+}
+@media screen and (min-height: 300px) and (max-height: 600px){
+.section-3{
+  height:100vh 
+}
+}
+
+
+/*MOBILE DEVICES*/
+@media screen and (max-width: 450px) {
+
+      .section-1{
+        background:url("../../../assets/placeholder2-mobile.jpg") no-repeat 0 0;
+        width:100%;
+        height:50vh;
+    }
+
+    .frame1{
+      width:100%;height:50vh;opacity: 0.5;z-index:10;position: absolute;
+    }
+    .frame2{
+      width:100%;height:50vh;z-index:10;position: absolute;
+    }
+
+    /* we skip this property in flexbox and grid methods */
+    .flex-container { /*for column layout*/
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-container > div {
+        
+        margin: 1vh;
+        width: 90%;
+        padding:2vw;
+        height:auto;
+        text-align: center
+      }
+
+      .section-2{
+        background-color: white;
+        width:100%;
+        height:auto;
+      }
+
+      .section-3{
+        background-color: #f1f1f1 !important;
+        width:100%;
+        height:80vh;
+
+      }
+      .section-3 > .team{
+        height:40% ;
+        width:100% ;
+      }
+      .section-3 > .carousel-demo{
+        height: 60% !important;
+        width:100% !important;
+      }
+
+      .section-4{
+        background-color: white;
+        width:100%;
+        height:auto;
+
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .gmap{
+        padding:0px !important;
+      }
+
+      footer{
+        height:10vh;
+      }
+
+  
+  }
+
+
+  /*ANIMATIONS*/
+
+  /* styles for animating text blocks appearing from bottom*/
+.moving-text {
+  position:relative;
+  top: 1000px;   
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  margin:4vh;
+}
+.moving-text-scroll {
+  position:relative;
+  top: 700px;   
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  margin:4vh;
+}
+.moving-text-end {
+  top:0px;
+  margin:4vh;
+}
+
+  /* styles for animating text blocks fading in*/
+
+  .text-fadein{
+    -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 3s; /* Firefox < 16 */
+      -ms-animation: fadein 3s; /* Internet Explorer */
+       -o-animation: fadein 3s; /* Opera < 12.1 */
+          animation: fadein 3s;
+
+  }
+ 
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/*Filter styles*/
+.saturate { filter: saturate(3); }
+.grayscale { filter: grayscale(100%); }
+.contrast { filter: contrast(160%); }
+.brightness { filter: brightness(0.25); }
+.blur { filter: blur(3px); }
+.invert { filter: invert(100%); }
+.sepia { filter: sepia(100%); }
+.huerotate { filter: hue-rotate(180deg); }
+.rss.opacity { filter: opacity(50%); }

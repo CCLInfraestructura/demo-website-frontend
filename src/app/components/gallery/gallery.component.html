@@ -1,0 +1,21 @@
+<div class="section-1">
+  <img class="frame1" src="../../../assets/frame1.png" alt="photo">
+  <img class="frame2" src="../../../assets/frame2.png" alt="photo">
+</div>
+<div class="section-2">
+  <div class="title-2">
+    <h1>Galería</h1>
+  </div>
+  <mat-tab-group mat-align-tabs="center" (selectedTabChange)='loadTabImages($event)'>
+    <div *ngFor="let tab of categories; let index = index">
+      <mat-tab *ngIf="tab.title!=='Sin clasificar'" [label]="tab.title">
+        <ng-template matTabContent>
+          <mat-grid-list cols="{{gridColsNum}}" rowHeight="1:1">
+            <mat-grid-tile *ngFor="let photo of tab.photos;"><img src="data:image/png;base64,{{photo.base64}}" />
+            </mat-grid-tile>
+          </mat-grid-list>
+        </ng-template>
+      </mat-tab>
+    </div>
+  </mat-tab-group>
+</div>

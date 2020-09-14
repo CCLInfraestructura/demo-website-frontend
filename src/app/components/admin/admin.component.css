@@ -1,0 +1,64 @@
+
+.settings-container{
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width:100%
+}
+
+.photo-icon{
+    position: absolute;
+    z-index: 10; 
+    color:white;
+    top:5vh;
+    background: grey;
+}
+
+.cat-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: lightgrey;
+    margin:5vh;
+    border-radius: 4px;
+    width:40%
+}
+
+
+.cat-new{
+    width:50%;
+}
+.cat-list{
+    width:50%;
+}
+.cat-new > * {
+    margin:2vh;
+    
+} 
+
+
+.photo-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: lightgrey;
+    margin:5vh;
+    border-radius: 4px;
+    width:40%
+}

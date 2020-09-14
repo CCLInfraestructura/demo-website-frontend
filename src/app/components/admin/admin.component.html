@@ -1,0 +1,142 @@
+<div class="settings-container">
+
+  <div class="cat-container">
+
+    <div class="cat-new">
+      <span>Nueva Categoria</span>
+      <input #categoryinput matInput placeholder="Introduce nombre..." type="text" [(ngModel)]="selectedCategory.title">
+      <button mat-button (click)="addCategory()"
+        [disabled]="disableButtons === true || selectedCategory.title === ''">Crear</button>
+    </div>
+
+    <div class="cat-list">
+      <mat-list>
+        <div *ngFor="let cat of categories">
+          <mat-list-item *ngIf="cat.title!=='Sin clasificar'">
+            <span matLine *ngIf="cat.editing !== true"> {{cat.title}} </span>
+            <span matLine *ngIf="cat.editing === true"><input style="width:auto" matInput placeholder="nuevo nombre..."
+                type="text" [(ngModel)]="updatedCategoryTitle"><button mat-button (click)="editCategory(cat)"
+                [disabled]="disableButtons === true">Editar</button></span>
+            <mat-icon matListIcon (click)="cat.editing = !cat.editing">edit</mat-icon>
+            <mat-icon matListIcon (click)="deleteCategory(cat.ID)">delete</mat-icon>
+          </mat-list-item>
+        </div>
+      </mat-list>
+    </div>
+
+
+  </div>
+
+  <div class="photo-container">
+
+    <h2>Nueva Foto</h2>
+    <form [formGroup]="photosform" (submit)="addPhoto()" (keydown.enter)="$event.preventDefault()">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Título</mat-label>
+              <input matInput placeholder="título" type="text" formControlName="title">
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Descripción</mat-label>
+              <textarea matInput placeholder="Descripción" type="text" formControlName="description"></textarea>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Categoría</mat-label>
+              <mat-select formControlName="categoryID">
+                <div *ngFor="let cat of categories">
+                  <mat-option *ngIf="cat.title!=='Sin clasificar'" [value]="cat.ID">
+                    {{cat.title}}
+                  </mat-option>
+                </div>
+              </mat-select>
+            </mat-form-field>
+            <input #fileinput type="file" name="image" (change)="onFileSelect($event)" accept=".png,.jpg,.jpeg"
+              text="fileinput" />
+          </td>
+        </tr>
+      </table>
+
+      <button mat-button type="submit" value="submit"
+        [disabled]="photosform.invalid || disableButtons === true || isPhotoSelected === false">Enviar</button>
+
+    </form>
+  </div>
+
+</div>
+
+
+
+<h1>Editar Galería</h1>
+<div class="section-2" style="min-height: 50vh;">
+  <mat-tab-group mat-align-tabs="center" (selectedTabChange)='loadTabImages($event)'>
+    <div *ngFor="let tab of categories; let index = index">
+      <mat-tab [label]="tab.title">
+
+
+        <ng-template matTabContent>
+          <!-- <div *ngFor="let photo of tab.photos;" >
+              <img src="data:image/png;base64,{{photo.base64}}"  />
+          </div>-->
+          <mat-grid-list cols="{{gridColsNum}}" rowHeight="1:1">
+            <mat-grid-tile *ngFor="let photo of tab.photos;">
+              <img src="data:image/png;base64,{{photo.base64}}" />
+              <mat-icon class="photo-icon" style="left:5vh" matListIcon (click)="editPhoto(photo)">edit</mat-icon>
+              <mat-icon class="photo-icon" matListIcon (click)="deletePhoto(photo)">delete</mat-icon>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </ng-template>
+
+
+
+      </mat-tab>
+    </div>
+  </mat-tab-group>
+
+
+</div>
+
+
+<div>
+
+  <h2>Editar Foto</h2>
+  <form [formGroup]="editphotoform" (keydown.enter)="$event.preventDefault()">
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="título" type="text" formControlName="title">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Descripción</mat-label>
+            <textarea matInput placeholder="Descripción" type="text" formControlName="description"></textarea>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Categoría</mat-label>
+            <mat-select formControlName="categoryID">
+              <div *ngFor="let cat of categories">
+                <mat-option *ngIf="cat.title!=='Sin clasificar'" [value]="cat.ID">
+                  {{cat.title}}
+                </mat-option>
+              </div>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <button mat-button type="submit" value="submit"
+      [disabled]="editphotoform.invalid || disableButtons === true">Enviar</button>
+
+  </form>
+</div>

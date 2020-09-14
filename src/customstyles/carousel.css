@@ -1,0 +1,249 @@
+
+.carousel-demo .ui-carousel .ui-carousel-content .ui-carousel-item .car-details > .p-grid {
+    border: 1px solid #b3c2ca;
+    border-radius: 3px;
+    margin: 0.3em;
+    text-align: center;
+    padding: 2em 0 2.25em 0;
+}
+.carousel-demo .ui-carousel .ui-carousel-content .ui-carousel-item .car-data .car-title {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 24px;
+}
+.carousel-demo .ui-carousel .ui-carousel-content .ui-carousel-item .car-data .car-subtitle {
+    margin: 0.25em 0 2em 0;
+}
+.carousel-demo .ui-carousel .ui-carousel-content .ui-carousel-item .car-data button {
+    margin-left: 0.5em;
+}
+.carousel-demo .ui-carousel .ui-carousel-content .ui-carousel-item .car-data button:first-child {
+    margin-left: 0;
+}
+.carousel-demo .ui-carousel.custom-carousel .ui-carousel-dot-icon {
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50%;
+}
+.carousel-demo .ui-carousel.ui-carousel-horizontal .ui-carousel-content .ui-carousel-item.ui-carousel-item-start .car-details > .p-grid {
+    margin-left: 0.6em;
+}
+.carousel-demo .ui-carousel.ui-carousel-horizontal .ui-carousel-content .ui-carousel-item.ui-carousel-item-end .car-details > .p-grid {
+    margin-right: 0.6em;
+}
+
+
+.picture-data{
+    position:relative;
+    height: 100%;
+    
+}
+.picture-data > div{
+    color:white;
+
+    
+}
+
+.picture-title{
+    color:white;
+    position: absolute;
+    top:70%;
+    background:rgb(179,194,202,0.8);
+    width:100%;
+    height:15%;
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.picture-subtitle{
+    color:white;
+    background:rgb(179,194,202,0.8);
+    position:absolute;
+    top:85%;
+    width:100%;
+    height:16%;
+    text-align: center;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.picture{
+    width:100%;
+    height:100%;
+}
+
+/*DESKTOP*/
+
+
+.carousel-demo > p-carousel{
+    height: 100% !important;
+    width:100% !important;
+    display: inline-block;
+}
+
+.ui-carousel, .ui-carousel-content, .ui-carousel-container,.ui-carousel-item, .car-details{
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: hidden;
+}
+.ui-carousel-items-container{
+    height: 100% !important;
+}
+
+.ui-carousel-item{
+    overflow: hidden !important;
+}
+
+.p-nogutter{
+    width: 90%;
+    height: 90%;
+    border-radius:15px !important;
+    overflow:hidden;
+    padding:0 !important;
+}
+
+/*TABLETS*/
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+    .carousel-demo{
+        width:100% !important;
+        
+    }
+
+    .ui-carousel{
+        width:100% !important
+    }
+
+    .carousel-demo > p-carousel{
+        height: 100% !important;
+        width:100% !important;
+        display: inline-block;
+    }
+
+    .ui-carousel, .ui-carousel-content, .ui-carousel-container,.ui-carousel-item, .car-details{
+        width: 100% !important;
+        height: 100% !important;
+        overflow: hidden;
+
+        display: flex;
+         justify-content: center;
+    }
+    .ui-carousel-items-container{
+        height: 100% !important;
+    }
+
+    .ui-carousel-item{
+        overflow: hidden !important;
+    }
+
+    
+    .p-nogutter{
+        width: 60% !important;
+        height: 95% !important;
+        border-radius:15px !important;
+        overflow:hidden !important;
+        padding:0 !important;
+    }
+
+    .flex-container > div{
+        margin:0;
+        width:100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+    .p-nogutter{
+        width: 80% !important;
+
+    }
+}
+
+@media screen and (min-height: 300) and (max-height: 500px) {
+    .p-nogutter{
+        width: 30% !important;
+
+    }
+}
+
+/* MOBILE DISPLAYS */
+@media screen and (max-width: 450px) {
+    .carousel-demo{
+        width:100% !important;
+        
+    }
+
+    .carousel-demo > p-carousel{
+        height: 100% !important;
+        width:100% !important;
+        display: inline-block;
+    }
+
+    .ui-carousel, .ui-carousel-content, .ui-carousel-container,.ui-carousel-item, .car-details{
+        width: 95vw !important;
+        height: 100% !important;
+        overflow: hidden;
+
+        display: flex;
+         justify-content: center;
+         align-items: center;
+    }
+    .ui-carousel-item{
+        overflow: hidden !important;
+    }
+
+    
+    .p-nogutter{
+        width: 30vh !important;
+        height: 40vh !important;
+        border-radius:15px !important;
+        overflow:hidden !important;
+        padding:0 !important;
+    }
+
+    .flex-container > div{
+        margin:0;
+        width:100%;
+    }
+
+   
+}
+
+
+
+.p-nogutter:hover{
+    /*filter: brightness(0.7);*/
+    border:6px solid #b3c2ca !important
+}
+
+
+
+.ui-button{
+    border:transparent !important;
+    color:grey !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+.ui-button:hover{
+    border:transparent !important;
+    color:rgb(61, 187, 209) !important;
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+.ui-button:enabled:focus{
+    box-shadow: 0 0 0 0.2em lightgrey !important;
+}
+
+.pi-circle-off{
+    background-color: lightgrey !important;
+}
+
+.pi-circle-on{
+    background-color: rgb(61, 187, 209) !important;
+}
+
+.ui-widget.ui-button:enabled:focus{
+    box-shadow: 0 0 0 0 transparent !important;
+}

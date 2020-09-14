@@ -1,0 +1,22 @@
+
+<!-- Toolbar -->
+
+<mat-toolbar class="toolbar1 toolbartop" *ngIf="!toolbarHidden">
+  <mat-toolbar-row>
+    
+    <img  src="assets/ccl_logo.png" [routerLink]="'/'" style="width: auto; height: auto; max-width: 70%;max-height: 70%;">
+    <span class="menu-spacer"></span>
+    <div style="float:right">
+      <a mat-button class="toolbar-link animated-border" [routerLink]="'/gallery'"> Galería </a>
+      <a mat-button class="toolbar-link animated-border" [routerLink]="'/contact'"> Contacto </a>
+      <a mat-button class="toolbar-link animated-border" [routerLink]="'/todo'"> Carrera  </a>
+      <!--<mat-icon class="toolbar-icon" aria-hidden="false" aria-label="email">email</mat-icon>-->
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+
+

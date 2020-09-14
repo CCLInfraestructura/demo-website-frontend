@@ -1,0 +1,114 @@
+<div class="content" role="main" style="position: relative;">
+
+  <div class="section-1">
+    <img class="frame1" src="../../../assets/frame1.png" alt="photo">
+    <img class="frame2" src="../../../assets/frame2.png" alt="photo">
+  </div>
+
+  <div class="section-2 flex-container">
+    <div>
+      <h2 class="desc-title">Tratamientos</h2>
+      <div class="moving-text text-fadein">
+        Placeholder text : Esta sección presenta información general sobre los tipos de tratamiento usados contra el cáncer, incluyendo los
+        tratamientos convencionales, como cirugía, quimioterapia y radioterapia,
+        así como aquellos que son más recientes.
+      </div>
+    </div>
+    <div>
+      <h2 class="desc-title">Experiencia</h2>
+      <div class="moving-text text-fadein">
+        Placeholder text : Cuando un médico realiza un procedimiento por 100 ocasiones alcanza una experiencia que permite cuantificar sus
+        errores y corregirlos en el futuro.
+        Las áreas en las cuales la experiencia pesa son todas aquellas de tipo quirúrgico-invasivo. 
+      </div>
+    </div>
+    <div>
+      <h2 class="desc-title">Visión</h2>
+      <div class="moving-text text-fadein">
+        Placeholder text : El momento histórico exacto en que se hace referencia a España por primera vez no está claramente definido,
+        existiendo escritos del siglo VI en los que ya aparece la palabra España, como el «Laus Spaniae» de la Historia
+        de los reyes godos</div>
+    </div>
+  </div>
+
+  <div class="section-3 flex-container">
+    <div class="team">
+      <h2 class="desc-title">Equipo</h2>
+      <div class="moving-text-scroll">
+        Placeholder text : Un equipo es un grupo de seres humanos que se reúnen y trabajan en conjunto para alcanzar una meta en común.
+        Para esto, el equipo mantiene una cierta organización que le permita conseguir sus objetivos. ...
+      </div>
+    </div>
+
+    <div class="carousel-demo">
+      <p-carousel [value]="pictures" [numVisible]="carouselNumVisible" [numScroll]="carouselNumScroll" [circular]="true"
+        [responsiveOptions]="responsiveOptions">
+
+        <ng-template let-pic pTemplate="item">
+          <div class="car-details">
+            <div class="p-grid p-nogutter">
+              <div class="p-col-12 picture-data" (mouseover)="pic.showData=true" (mouseout)="pic.showData=false"
+                (click)="showPhotoOverlay(pic)">
+                <div class="picture-title" *ngIf="pic.showData===true">{{pic.title}}</div>
+                <div class="picture-subtitle" *ngIf="pic.showData===true">{{pic.description}}</div>
+                <img class="picture" src="data:image/png;base64,{{pic.base64}}" alt="photo" />
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+      </p-carousel>
+    </div>
+
+  </div>
+
+  <div class="section-4 flex-container">
+    <div>
+      <h2 class="desc-title">Contacto</h2>
+      <br>
+      <div>Director Ejecutivo: </div>
+      <div>Placeholder surname1 surname2</div>
+      <br>
+      <div>Tel.: 959 99 99 999</div>
+      <div>E-Mail: <a href="mailto:test@gmail.com">placeholder@gmail.com</a></div>
+      <br>
+      <div>Dirección:</div>
+      <div>Placeholder street line 1</div>
+      <div>Placeholder street line 2</div>
+      <br>
+      <!--<div>Disen~o de la página:</div>
+          <div>Nombre</div>-->
+    </div>
+    <div class="gmap">
+      <agm-map [latitude]='latitude' [longitude]='longitude' [mapTypeId]='mapType' [zoom]='zoom'>
+        <agm-marker [latitude]="latitude" [longitude]="longitude" [label]="'CL'"></agm-marker>
+      </agm-map>
+    </div>
+  </div>
+
+
+  <footer>
+    <p>Síguenos en: </p>
+    <a href="https://www.facebook.com/"><img src="../../../assets/facebook-48.png" height="40%"></a>
+    <a href="https://www.instagram.com/"><img src="../../../assets/instagram-48.png" height="40%"></a>
+  </footer>
+
+</div>
+
+
+
+<div id="myNav" class="overlay" (click)="closePhotoOverlay()">
+  <div class="overlay-content">
+    <div class="overlay-left">
+      <div class="overlay-title">
+        <span>{{selectedTeamMember.title}}</span>
+      </div>
+      <div class="overlay-desc">
+        {{selectedTeamMember.description}}
+      </div>
+    </div>
+    <div class="overlay-right">
+      <img class="overlay-img" src="data:image/png;base64,{{selectedTeamMember.base64}}" alt="photo" />
+    </div>
+  </div>
+</div>

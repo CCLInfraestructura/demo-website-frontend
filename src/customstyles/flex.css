@@ -1,0 +1,21 @@
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*Flex for rows and columns in a div*/
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }

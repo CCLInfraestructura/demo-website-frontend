@@ -1,0 +1,7 @@
+::ng-deep .mat-button{
+  border-radius: 0px !important;
+}
+
+::ng-deep .mat-button .mat-button-focus-overlay {
+  background-color: transparent;
+}
